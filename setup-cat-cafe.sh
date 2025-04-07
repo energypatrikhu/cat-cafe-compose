@@ -63,7 +63,7 @@ fi
 #
 
 # Clone the backend repository
-echo "Cloning the backend repository..."
+echo "\nCloning the backend repository..."
 if [ -d "cat-cafe-backend" ]; then
   echo "cat-cafe-backend directory already exists. Pulling latest changes..."
   cd cat-cafe-backend
@@ -74,7 +74,7 @@ else
 fi
 
 # Clone the frontend repository
-echo "Cloning the frontend repository..."
+echo "\nCloning the frontend repository..."
 if [ -d "cat-cafe-frontend" ]; then
   echo "cat-cafe-frontend directory already exists. Pulling latest changes..."
   cd cat-cafe-frontend
@@ -85,5 +85,12 @@ else
 fi
 
 # Run docker compose
-echo "Running Docker Compose..."
+echo "\nRunning Docker Compose..."
 docker compose up -d --build
+
+# Get all IP addresses of the host machine, and print ip:port
+IP_ADDRESSES=$(hostname -I | tr ' ' '\n')
+echo "\nThe server should be running on one of these IP addresses:"
+for IP in $IP_ADDRESSES; do
+  echo "\thttp://$IP:5542"
+done

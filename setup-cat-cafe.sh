@@ -4,44 +4,57 @@
 # This script sets up a cat cafe environment with a specific directory structure and files.
 ##
 
+# Check if the script is run as root
+if [ "$(id -u)" -ne 0 ]; then
+  echo "This script must be run as root. Please use sudo."
+  exit 1
+fi
+
 # Check if docker, docker compose, git, node, and npm are installed
-if
-  ! command -v docker &
-  >/dev/null
-then
-  echo "Docker could not be found. Please install Docker."
+echo "Checking for required tools..."
+
+echo "Checking for Docker..."
+if ! [ -x "$(command -v docker)" ]; then
+  # Add Docker's official GPG key:
+  sudo apt-get update
+  sudo apt-get install ca-certificates curl
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+  # Add the repository to Apt sources:
+  echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |
+    sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+  sudo apt-get update
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+fi
+
+echo "Checking for Docker Compose..."
+if ! [ -x "$(command -v docker compose)" ]; then
+  echo "Docker Compose could not be found. Docker failed to install. Please check the Docker installation."
   exit
 fi
 
-if
-  ! command -v docker-compose &
-  >/dev/null
-then
-  echo "Docker Compose could not be found. Please install Docker Compose."
-  exit
+echo "Checking for Git..."
+if ! [ -x "$(command -v git)" ]; then
+  # Install Git
+  sudo apt-get update
+  sudo apt-get install git
 fi
 
-if
-  ! command -v git &
-  >/dev/null
-then
-  echo "Git could not be found. Please install Git."
-  exit
+echo "Checking for Node.js..."
+if ! [ -x "$(command -v node)" ]; then
+  sudo apt-get install -y curl
+  curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+  sudo -E bash nodesource_setup.sh
+  sudo apt-get install -y nodejs
 fi
 
-if
-  ! command -v node &
-  >/dev/null
-then
-  echo "Node.js could not be found. Please install Node.js."
-  exit
-fi
-
-if
-  ! command -v npm &
-  >/dev/null
-then
-  echo "npm could not be found. Please install npm."
+echo "Checking for npm..."
+if ! [ -x "$(command -v npm)" ]; then
+  echo "npm could not be found. Node.js failed to install. Please check the Node.js installation."
   exit
 fi
 
@@ -50,7 +63,13 @@ fi
 #
 
 # Clone the backend repository
+echo "Cloning the backend repository..."
 git clone https://github.com/energypatrikhu/cat-cafe-backend.git cat-cafe-backend
 
 # Clone the frontend repository
+echo "Cloning the frontend repository..."
 git clone https://github.com/Sy-Anna/CatCafeFrontend cat-cafe-frontend
+
+# Run docker compose
+echo "Running Docker Compose..."
+docker compose -f docker-compose.yml up -d --build

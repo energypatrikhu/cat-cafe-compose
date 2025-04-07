@@ -64,12 +64,26 @@ fi
 
 # Clone the backend repository
 echo "Cloning the backend repository..."
-git clone https://github.com/energypatrikhu/cat-cafe-backend.git cat-cafe-backend
+if [ -d "cat-cafe-backend" ]; then
+  echo "cat-cafe-backend directory already exists. Pulling latest changes..."
+  cd cat-cafe-backend
+  git pull origin main
+  cd ..
+else
+  git clone https://github.com/energypatrikhu/cat-cafe-backend.git cat-cafe-backend
+fi
 
 # Clone the frontend repository
 echo "Cloning the frontend repository..."
-git clone https://github.com/Sy-Anna/CatCafeFrontend cat-cafe-frontend
+if [ -d "cat-cafe-frontend" ]; then
+  echo "cat-cafe-frontend directory already exists. Pulling latest changes..."
+  cd cat-cafe-frontend
+  git pull origin main
+  cd ..
+else
+  git clone https://github.com/Sy-Anna/CatCafeFrontend cat-cafe-frontend
+fi
 
 # Run docker compose
 echo "Running Docker Compose..."
-docker compose -f docker-compose.yml up -d --build
+docker compose up -d --build

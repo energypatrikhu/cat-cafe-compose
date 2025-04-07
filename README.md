@@ -45,6 +45,7 @@ Ensure the following tools are installed on your system:
 - **cat-cafe-backend**: Backend service repository.
 - **cat-cafe-frontend**: Frontend service repository.
 
+---
 
 # Cat Cafe Projekt
 

@@ -44,3 +44,51 @@ Ensure the following tools are installed on your system:
 - **seed-cat-cafe.sh**: Seeds the database with initial data.
 - **cat-cafe-backend**: Backend service repository.
 - **cat-cafe-frontend**: Frontend service repository.
+
+
+# Cat Cafe Projekt
+
+A Cat Cafe projekt egy teljes stack alkalmazás a **Cat Cafe Webshop** számára. Három fő komponensből áll:
+- **Adatbázis**: Egy MariaDB példány az adatok tárolására.
+- **Backend**: Egy Node.js alapú API szerver.
+- **Frontend**: Egy modern webtechnológiákkal épített felhasználói felület.
+
+## Előfeltételek
+
+Győződj meg róla, hogy a következő eszközök telepítve vannak a rendszereden:
+> **Megjegyzés**: A telepítési szkript `sudo` jogosultságokat igényel a függőségek telepítéséhez és a Docker parancsok futtatásához.
+> A legtöbb eszközt a szkript automatikusan telepíti, ha még nincsenek jelen.
+- Docker
+- Docker Compose
+- Git
+- Node.js és npm
+
+## Telepítési útmutató
+
+1. Klónozd le ezt a repót, és navigálj a projekt könyvtárába:
+  ```bash
+  git clone https://github.com/energypatrikhu/cat-cafe-compose cat-cafe
+  cd cat-cafe
+  ```
+
+2. Futtasd a telepítési szkriptet a függőségek telepítéséhez, az almodulok klónozásához és az alkalmazás elindításához:
+  ```bash
+  sudo ./setup-cat-cafe.sh
+  ```
+
+3. Töltsd fel az adatbázist kezdeti adatokkal:
+  ```bash
+  ./seed-cat-cafe.sh
+  ```
+
+4. Érd el az alkalmazást:
+  - Frontend: [http://localhost:5542](http://localhost:5542)
+  - Backend API: [http://localhost:5543](http://localhost:5543)
+
+## Projektstruktúra
+
+- **docker-compose.yaml**: Az alkalmazás szolgáltatásait definiálja.
+- **setup-cat-cafe.sh**: Automatizálja a telepítési folyamatot.
+- **seed-cat-cafe.sh**: Feltölti az adatbázist kezdeti adatokkal.
+- **cat-cafe-backend**: A backend szolgáltatás repója.
+- **cat-cafe-frontend**: A frontend szolgáltatás repója.

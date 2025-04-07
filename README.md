@@ -1,6 +1,6 @@
 # Cat Cafe Project
 
-The Cat Cafe project is a full-stack application designed to manage a virtual cat cafe. It consists of three main components:
+The Cat Cafe project is a full-stack application for the webshop **Cat Cafe Webshop**. It consists of three main components:
 - **Database**: A MariaDB instance to store data.
 - **Backend**: A Node.js-based API server.
 - **Frontend**: A user interface built with modern web technologies.

@@ -13,7 +13,6 @@ Ensure the following tools are installed on your system:
 - Docker
 - Docker Compose
 - Git
-- Node.js and npm
 
 ## Setup Instructions
 

@@ -8,7 +8,8 @@ The Cat Cafe project is a full-stack application for the webshop **Cat Cafe Webs
 ## Prerequisites
 
 Ensure the following tools are installed on your system:
-> **Note**: The setup script requires `sudo` privileges to install dependencies and run Docker commands.
+> **Note**: This script was created for Ubuntu systems. In case it doesn't work, feel free to create a [pull request](https://github.com/energypatrikhu/cat-cafe-compose/pulls) or an [issue](https://github.com/energypatrikhu/cat-cafe-compose/issues)<br>
+> **Note**: The setup script requires `sudo` privileges to install dependencies and run Docker commands.<br>
 > For most of the tools, the script will automatically install them if they are not already present.
 - Docker
 - Docker Compose
@@ -56,12 +57,12 @@ A Cat Cafe projekt egy teljes stack alkalmazás a **Cat Cafe Webshop** számára
 ## Előfeltételek
 
 Győződj meg róla, hogy a következő eszközök telepítve vannak a rendszereden:
-> **Megjegyzés**: A telepítési szkript `sudo` jogosultságokat igényel a függőségek telepítéséhez és a Docker parancsok futtatásához.
-> A legtöbb eszközt a szkript automatikusan telepíti, ha még nincsenek jelen.
+> **Megjegyzés**: Ez a szkript Ubuntu rendszerekhez készült. Ha nem működik, nyugodtan hozz létre egy [pull requestet](https://github.com/energypatrikhu/cat-cafe-compose/pulls) vagy egy [hibajegyet](https://github.com/energypatrikhu/cat-cafe-compose/issues).<br>
+> **Megjegyzés**: A telepítési szkript `sudo` jogosultságokat igényel a függőségek telepítéséhez és a Docker parancsok futtatásához.<br>
+> A legtöbb eszköz esetében a szkript automatikusan telepíti azokat, ha még nincsenek jelen.
 - Docker
 - Docker Compose
 - Git
-- Node.js és npm
 
 ## Telepítési útmutató
 

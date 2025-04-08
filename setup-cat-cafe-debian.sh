@@ -11,7 +11,7 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-# Check if docker, docker compose, git, node, and npm are installed
+# Check if docker, docker compose and git are installed
 echo "Checking for required tools..."
 
 echo "Checking for Docker..."
@@ -43,20 +43,6 @@ if ! [ -x "$(command -v git)" ]; then
   # Install Git
   sudo apt-get update
   sudo apt-get install git
-fi
-
-echo "Checking for Node.js..."
-if ! [ -x "$(command -v node)" ]; then
-  sudo apt-get install -y curl
-  curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
-  sudo bash nodesource_setup.sh
-  sudo apt-get install -y nodejs
-fi
-
-echo "Checking for npm..."
-if ! [ -x "$(command -v npm)" ]; then
-  echo "npm could not be found. Node.js failed to install. Please check the Node.js installation."
-  exit
 fi
 
 #

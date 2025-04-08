@@ -2,8 +2,8 @@
 
 The Cat Cafe project is a full-stack application for the webshop **Cat Cafe Webshop**. It consists of three main components:
 - **Database**: A MariaDB instance to store data.
-- **Backend**: A Node.js-based API server.
-- **Frontend**: A user interface built with modern web technologies.
+- [Backend](https://github.com/energypatrikhu/cat-cafe-backend.git): A Node.js-based API server.
+- [Frontend](https://github.com/Sy-Anna/CatCafeFrontend): A user interface built with modern web technologies.
 
 ## Prerequisites
 
@@ -50,8 +50,8 @@ Ensure the following tools are installed on your system:
 
 A Cat Cafe projekt egy teljes stack alkalmazás a **Cat Cafe Webshop** számára. Három fő komponensből áll:
 - **Adatbázis**: Egy MariaDB példány az adatok tárolására.
-- **Backend**: Egy Node.js alapú API szerver.
-- **Frontend**: Egy modern webtechnológiákkal épített felhasználói felület.
+- [Backend](https://github.com/energypatrikhu/cat-cafe-backend): Egy Node.js alapú API szerver.
+- [Frontend](https://github.com/Sy-Anna/CatCafeFrontend): Egy modern webtechnológiákkal épített felhasználói felület.
 
 ## Előfeltételek
 

@@ -55,9 +55,21 @@ if [ -d "cat-cafe-backend" ]; then
   echo "cat-cafe-backend directory already exists. Pulling latest changes..."
   cd cat-cafe-backend
   git pull origin main
+  
+  echo "Building project..." 
+  npm i
+  npm run build
+
   cd ..
 else
   git clone https://github.com/energypatrikhu/cat-cafe-backend.git cat-cafe-backend
+
+  echo "Building project..." 
+  cd cat-cafe-backend
+  npm i
+  npm run build
+
+  cd .. 
 fi
 
 # Clone the frontend repository
@@ -66,9 +78,21 @@ if [ -d "cat-cafe-frontend" ]; then
   echo "cat-cafe-frontend directory already exists. Pulling latest changes..."
   cd cat-cafe-frontend
   git pull origin main
+  
+  echo "Building project..." 
+  npm i
+  npm run build
+
   cd ..
 else
   git clone https://github.com/Sy-Anna/CatCafeFrontend cat-cafe-frontend
+
+  echo "Building project..." 
+  cd cat-cafe-frontent 
+  npm i
+  npm run build
+
+  cd ..
 fi
 
 # Run docker compose

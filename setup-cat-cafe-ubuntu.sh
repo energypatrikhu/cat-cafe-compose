@@ -2,6 +2,7 @@
 
 ##
 # This script sets up a cat cafe environment with a specific directory structure and files.
+# Ubuntu based systems.
 ##
 
 # Check if the script is run as root

@@ -88,7 +88,7 @@ else
   git clone https://github.com/Sy-Anna/CatCafeFrontend cat-cafe-frontend
 
   echo "Building project..." 
-  cd cat-cafe-frontent 
+  cd cat-cafe-frontend
   npm i
   npm run build
 

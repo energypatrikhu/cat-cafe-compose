@@ -17,20 +17,26 @@ Ensure the following tools are installed on your system:
 ## Setup Instructions
 
 1. Clone this repository and navigate to the project directory:
-   ```bash
-   git clone https://github.com/energypatrikhu/cat-cafe-compose cat-cafe
-   cd cat-cafe
-   ```
+    ```bash
+    git clone https://github.com/energypatrikhu/cat-cafe-compose cat-cafe
+    cd cat-cafe
+    ```
 
 2. Run the setup script to install dependencies, clone submodules, and start the application:
-   ```bash
-   sudo ./setup-cat-cafe.sh
-   ```
+    1. Install Debian-specific dependencies:
+        ```bash
+        sudo ./setup-cat-cafe-debian.sh
+        ```
+
+    2. Install Ubuntu-specific dependencies:
+        ```bash
+        sudo ./setup-cat-cafe-ubuntu.sh
+        ```
 
 3. Seed the database with initial data:
-   ```bash
-   ./seed-cat-cafe.sh
-   ```
+    ```bash
+    ./seed-cat-cafe.sh
+    ```
 
 4. Access the application:
    - Frontend: [http://localhost:5542](http://localhost:5542)
@@ -65,20 +71,26 @@ Győződj meg róla, hogy a következő eszközök telepítve vannak a rendszere
 ## Telepítési útmutató
 
 1. Klónozd le ezt a repót, és navigálj a projekt könyvtárába:
-  ```bash
-  git clone https://github.com/energypatrikhu/cat-cafe-compose cat-cafe
-  cd cat-cafe
-  ```
+    ```bash
+    git clone https://github.com/energypatrikhu/cat-cafe-compose cat-cafe
+    cd cat-cafe
+    ```
 
 2. Futtasd a telepítési szkriptet a függőségek telepítéséhez, az almodulok klónozásához és az alkalmazás elindításához:
-  ```bash
-  sudo ./setup-cat-cafe.sh
-  ```
+    1. Telepítsd a Debian specifikus függőségeket:
+        ```bash
+        sudo ./setup-cat-cafe-debian.sh
+        ```
+
+    2. Telepítsd a Ubuntu specifikus függőségeket:
+        ```bash
+        sudo ./setup-cat-cafe-ubuntu.sh
+        ```
 
 3. Töltsd fel az adatbázist kezdeti adatokkal:
-  ```bash
-  ./seed-cat-cafe.sh
-  ```
+    ```bash
+    ./seed-cat-cafe.sh
+    ```
 
 4. Érd el az alkalmazást:
   - Frontend: [http://localhost:5542](http://localhost:5542)

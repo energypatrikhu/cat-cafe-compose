@@ -17,6 +17,8 @@ Ensure the following tools are installed on your system:
 - Docker
 - Docker Compose
 - Git
+- Node.JS
+- npm
 
 ## Setup Instructions
 
@@ -29,16 +31,19 @@ Ensure the following tools are installed on your system:
 2. Run the setup script to install dependencies, clone submodules, and start the application:
     1. Install Debian-specific dependencies:
         ```bash
+        sudo chmod +x ./setup-cat-cafe-debian.sh
         sudo ./setup-cat-cafe-debian.sh
         ```
 
     2. Install Ubuntu-specific dependencies:
         ```bash
+        sudo chmod +x ./setup-cat-cafe-ubuntu.sh
         sudo ./setup-cat-cafe-ubuntu.sh
         ```
 
 3. Seed the database with initial data:
     ```bash
+    sudo chmod +x ./seed-cat-cafe.sh
     ./seed-cat-cafe.sh
     ```
 
@@ -75,6 +80,8 @@ Győződj meg róla, hogy a következő eszközök telepítve vannak a rendszere
 - Docker
 - Docker Compose
 - Git
+- Node.JS
+- npm
 
 ## Telepítési útmutató
 
@@ -87,16 +94,19 @@ Győződj meg róla, hogy a következő eszközök telepítve vannak a rendszere
 2. Futtasd a telepítési szkriptet a függőségek telepítéséhez, az almodulok klónozásához és az alkalmazás elindításához:
     1. Telepítsd a Debian specifikus függőségeket:
         ```bash
+        sudo chmod +x ./setup-cat-cafe-debian.sh
         sudo ./setup-cat-cafe-debian.sh
         ```
 
     2. Telepítsd a Ubuntu specifikus függőségeket:
         ```bash
+        sudo chmod +x ./setup-cat-cafe-ubuntu.sh
         sudo ./setup-cat-cafe-ubuntu.sh
         ```
 
 3. Töltsd fel az adatbázist kezdeti adatokkal:
     ```bash
+    sudo chmod +x ./seed-cat-cafe.sh
     ./seed-cat-cafe.sh
     ```
 

@@ -11,7 +11,7 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-# Check if docker, docker compose and git are installed
+# Check if docker, docker compose, git and node.js are installed
 echo "Checking for required tools..."
 
 echo "Checking for Docker..."
@@ -29,7 +29,7 @@ if ! [ -x "$(command -v docker)" ]; then
     $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |
     sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
   sudo apt-get update
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 
 echo "Checking for Docker Compose..."
@@ -42,7 +42,16 @@ echo "Checking for Git..."
 if ! [ -x "$(command -v git)" ]; then
   # Install Git
   sudo apt-get update
-  sudo apt-get install git
+  sudo apt-get install -y git
+fi
+
+echo "Checking for Node.js..."
+if ! [ -x "$(command -v node)" ]; then
+  sudo apt-get install -y curl
+  curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+  sudo -E bash nodesource_setup.sh
+  sudo apt-get install -y nodejs
+  rm nodesource_setup.sh
 fi
 
 #

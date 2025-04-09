@@ -2,8 +2,6 @@ services:
   cat-cafe-db:
     container_name: cat-cafe-db
     image: mariadb:latest
-    volumes:
-      - ./data/db:/var/lib/mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: cat-cafe-psw
@@ -28,5 +26,5 @@ services:
     depends_on:
       - cat-cafe-backend
     ports:
-      - 5542:80
+      - 5542:4173
     restart: unless-stopped
